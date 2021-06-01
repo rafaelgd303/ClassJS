@@ -71,8 +71,8 @@ function division(number1, number2) {
 
 
 function calucator(operator) {
-    var first = document.getElementById('number1').value;
-    var second = document.getElementById('number2').value;
+    var first = parseFloat(document.getElementById('number1').value);
+    var second = parseFloat(document.getElementById('number2').value);
 
     var result;
 
@@ -93,5 +93,24 @@ function calucator(operator) {
 
     document.getElementById('result').value = result;
 
+}
+
+function addToList() {
+    var list = document.getElementById("toDoList");
+    var textToAdd = document.getElementById("textToAdd").value;
+    var newLi = document.createElement("li");
+
+    newLi.appendChild(document.createTextNode(textToAdd));
+    newLi.setAttribute("id", textToAdd);
+
+    list.appendChild(newLi);
+}
+
+function deleteFromList() {
+    var list = document.getElementById("toDoList");
+    
+    var item = document.getElementById(document.getElementById("textToAdd").value);
+
+    list.removeChild(item);
 }
 
